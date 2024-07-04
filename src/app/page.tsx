@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
-export default function Home() {
+export default function HomePage() {
   return (
     <main className="min-h-screen m-4">
         <h1 className="mb-1">hello home page</h1>
