@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import GithubSignInButton from '@/components/GithubSignInButton';
+import GoogleSignInButton from '@/components/GoogleSignInButton';
 
 export default function SignUpPage() {
     return (
@@ -32,7 +34,8 @@ export default function SignUpPage() {
             </div>
 
             <div className="flex w-full justify-center items-center gap-x-3 mt-6">
-                github and google
+                <GithubSignInButton />
+                <GoogleSignInButton />
             </div>
         </div>
     );
