@@ -13,7 +13,7 @@ specifiers:
   eslint-config-next: 14.2.4
   lucide-react: ^0.400.0
   next: 14.2.4
-  next-auth: ^4.24.7
+  next-auth: 5.0.0-beta.19
   nodemailer: ^6.9.14
   postcss: ^8
   prisma: ^5.16.1
@@ -32,7 +32,7 @@ dependencies:
   clsx: registry.npmjs.org/clsx/2.1.1
   lucide-react: registry.npmjs.org/lucide-react/0.400.0_react@18.3.1
   next: registry.npmjs.org/next/14.2.4_nnrd3gsncyragczmpvfhocinkq
-  next-auth: registry.npmjs.org/next-auth/4.24.7_bgw3tpm5ktcnabwhazznupsi6m
+  next-auth: registry.npmjs.org/next-auth/5.0.0-beta.19_37ckc472gljoowfg55mh5vct3m
   nodemailer: registry.npmjs.org/nodemailer/6.9.14
   react: registry.npmjs.org/react/18.3.1
   react-dom: registry.npmjs.org/react-dom/18.3.1_react@18.3.1
@@ -57,6 +57,33 @@ packages:
     name: '@alloc/quick-lru'
     version: 5.2.0
     engines: {node: '>=10'}
+
+  registry.npmjs.org/@auth/core/0.32.0_nodemailer@6.9.14:
+    resolution: {integrity: sha512-3+ssTScBd+1fd0/fscAyQN1tSygXzuhysuVVzB942ggU4mdfiTbv36P0ccVnExKWYJKvu3E2r3/zxXCCAmTOrg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@auth/core/-/core-0.32.0.tgz}
+    id: registry.npmjs.org/@auth/core/0.32.0
+    name: '@auth/core'
+    version: 0.32.0
+    peerDependencies:
+      '@simplewebauthn/browser': ^9.0.1
+      '@simplewebauthn/server': ^9.0.2
+      nodemailer: ^6.8.0
+    peerDependenciesMeta:
+      '@simplewebauthn/browser':
+        optional: true
+      '@simplewebauthn/server':
+        optional: true
+      nodemailer:
+        optional: true
+    dependencies:
+      '@panva/hkdf': registry.npmjs.org/@panva/hkdf/1.2.1
+      '@types/cookie': registry.npmjs.org/@types/cookie/0.6.0
+      cookie: registry.npmjs.org/cookie/0.6.0
+      jose: registry.npmjs.org/jose/5.6.3
+      nodemailer: registry.npmjs.org/nodemailer/6.9.14
+      oauth4webapi: registry.npmjs.org/oauth4webapi/2.11.1
+      preact: registry.npmjs.org/preact/10.11.3
+      preact-render-to-string: registry.npmjs.org/preact-render-to-string/5.2.3_preact@10.11.3
+    dev: false
 
   registry.npmjs.org/@auth/core/0.34.1_nodemailer@6.9.14:
     resolution: {integrity: sha512-tuYU2VIbI8rFbkSwP710LmybB2FXJsPN7j3sjRVfN9SXVQBK2ej6LdewQaofpBGp4Mk+cC2UeiGNH0or4tgaeA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@auth/core/-/core-0.34.1.tgz}
@@ -1009,13 +1036,6 @@ packages:
     name: concat-map
     version: 0.0.1
     dev: true
-
-  registry.npmjs.org/cookie/0.5.0:
-    resolution: {integrity: sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/cookie/-/cookie-0.5.0.tgz}
-    name: cookie
-    version: 0.5.0
-    engines: {node: '>= 0.6'}
-    dev: false
 
   registry.npmjs.org/cookie/0.6.0:
     resolution: {integrity: sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/cookie/-/cookie-0.6.0.tgz}
@@ -2368,12 +2388,6 @@ packages:
     version: 1.21.6
     hasBin: true
 
-  registry.npmjs.org/jose/4.15.9:
-    resolution: {integrity: sha512-1vUQX+IdDMVPj4k8kOxgUqlcK518yluMuGZwqlr44FS1ppZB/5GWh4rZG89erpOBOJjU/OBsnCVFfapsRz6nEA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/jose/-/jose-4.15.9.tgz}
-    name: jose
-    version: 4.15.9
-    dev: false
-
   registry.npmjs.org/jose/5.6.3:
     resolution: {integrity: sha512-1Jh//hEEwMhNYPDDLwXHa2ePWgWiFNNUadVmguAAw2IJ6sj9mNxV5tGXJNqlMkJAybF6Lgw1mISDxTePP/187g==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/jose/-/jose-5.6.3.tgz}
     name: jose
@@ -2512,15 +2526,6 @@ packages:
     version: 10.3.0
     engines: {node: 14 || >=16.14}
 
-  registry.npmjs.org/lru-cache/6.0.0:
-    resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/lru-cache/-/lru-cache-6.0.0.tgz}
-    name: lru-cache
-    version: 6.0.0
-    engines: {node: '>=10'}
-    dependencies:
-      yallist: registry.npmjs.org/yallist/4.0.0
-    dev: false
-
   registry.npmjs.org/lucide-react/0.400.0_react@18.3.1:
     resolution: {integrity: sha512-rpp7pFHh3Xd93KHixNgB0SqThMHpYNzsGUu69UaQbSZ75Q/J3m5t6EhKyMT3m4w2WOxmJ2mY0tD3vebnXqQryQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/lucide-react/-/lucide-react-0.400.0.tgz}
     id: registry.npmjs.org/lucide-react/0.400.0
@@ -2618,33 +2623,29 @@ packages:
     version: 1.4.0
     dev: true
 
-  registry.npmjs.org/next-auth/4.24.7_bgw3tpm5ktcnabwhazznupsi6m:
-    resolution: {integrity: sha512-iChjE8ov/1K/z98gdKbn2Jw+2vLgJtVV39X+rCP5SGnVQuco7QOr19FRNGMIrD8d3LYhHWV9j9sKLzq1aDWWQQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/next-auth/-/next-auth-4.24.7.tgz}
-    id: registry.npmjs.org/next-auth/4.24.7
+  registry.npmjs.org/next-auth/5.0.0-beta.19_37ckc472gljoowfg55mh5vct3m:
+    resolution: {integrity: sha512-YHu1igcAxZPh8ZB7GIM93dqgY6gcAzq66FOhQFheAdOx1raxNcApt05nNyNCSB6NegSiyJ4XOPsaNow4pfDmsg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/next-auth/-/next-auth-5.0.0-beta.19.tgz}
+    id: registry.npmjs.org/next-auth/5.0.0-beta.19
     name: next-auth
-    version: 4.24.7
+    version: 5.0.0-beta.19
     peerDependencies:
-      next: ^12.2.5 || ^13 || ^14
+      '@simplewebauthn/browser': ^9.0.1
+      '@simplewebauthn/server': ^9.0.2
+      next: ^14 || ^15.0.0-0
       nodemailer: ^6.6.5
-      react: ^17.0.2 || ^18
-      react-dom: ^17.0.2 || ^18
+      react: ^18.2.0 || ^19.0.0-0
     peerDependenciesMeta:
+      '@simplewebauthn/browser':
+        optional: true
+      '@simplewebauthn/server':
+        optional: true
       nodemailer:
         optional: true
     dependencies:
-      '@babel/runtime': registry.npmjs.org/@babel/runtime/7.24.7
-      '@panva/hkdf': registry.npmjs.org/@panva/hkdf/1.2.1
-      cookie: registry.npmjs.org/cookie/0.5.0
-      jose: registry.npmjs.org/jose/4.15.9
+      '@auth/core': registry.npmjs.org/@auth/core/0.32.0_nodemailer@6.9.14
       next: registry.npmjs.org/next/14.2.4_nnrd3gsncyragczmpvfhocinkq
       nodemailer: registry.npmjs.org/nodemailer/6.9.14
-      oauth: registry.npmjs.org/oauth/0.9.15
-      openid-client: registry.npmjs.org/openid-client/5.6.5
-      preact: registry.npmjs.org/preact/10.22.1
-      preact-render-to-string: registry.npmjs.org/preact-render-to-string/5.2.6_preact@10.22.1
       react: registry.npmjs.org/react/18.3.1
-      react-dom: registry.npmjs.org/react-dom/18.3.1_react@18.3.1
-      uuid: registry.npmjs.org/uuid/8.3.2
     dev: false
 
   registry.npmjs.org/next/14.2.4_nnrd3gsncyragczmpvfhocinkq:
@@ -2705,12 +2706,6 @@ packages:
     version: 3.0.0
     engines: {node: '>=0.10.0'}
 
-  registry.npmjs.org/oauth/0.9.15:
-    resolution: {integrity: sha512-a5ERWK1kh38ExDEfoO6qUHJb32rd7aYmPHuyCu3Fta/cnICvYmgd2uhuKXvPD+PXB+gCEYYEaQdIRAjCOwAKNA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/oauth/-/oauth-0.9.15.tgz}
-    name: oauth
-    version: 0.9.15
-    dev: false
-
   registry.npmjs.org/oauth4webapi/2.11.1:
     resolution: {integrity: sha512-aNzOnL98bL6izG97zgnZs1PFEyO4WDVRhz2Pd066NPak44w5ESLRCYmJIyey8avSBPOMtBjhF3ZDDm7bIb7UOg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/oauth4webapi/-/oauth4webapi-2.11.1.tgz}
     name: oauth4webapi
@@ -2722,13 +2717,6 @@ packages:
     name: object-assign
     version: 4.1.1
     engines: {node: '>=0.10.0'}
-
-  registry.npmjs.org/object-hash/2.2.0:
-    resolution: {integrity: sha512-gScRMn0bS5fH+IuwyIFgnh9zBdo4DV+6GhygmWM9HyNJSgS0hScp1f5vjtm7oIIOiT9trXrShAkLFSc2IqKNgw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/object-hash/-/object-hash-2.2.0.tgz}
-    name: object-hash
-    version: 2.2.0
-    engines: {node: '>= 6'}
-    dev: false
 
   registry.npmjs.org/object-hash/3.0.0:
     resolution: {integrity: sha512-RSn9F68PjH9HqtltsSnqYC1XXoWe9Bju5+213R98cNGttag9q9yAOTzdbsqvIa7aNm5WffBZFpWYr2aWrklWAw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/object-hash/-/object-hash-3.0.0.tgz}
@@ -2828,13 +2816,6 @@ packages:
       es-object-atoms: registry.npmjs.org/es-object-atoms/1.0.0
     dev: true
 
-  registry.npmjs.org/oidc-token-hash/5.0.3:
-    resolution: {integrity: sha512-IF4PcGgzAr6XXSff26Sk/+P4KZFJVuHAJZj3wgO3vX2bMdNVp/QXTP3P7CEm9V1IdG8lDLY3HhiqpsE/nOwpPw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/oidc-token-hash/-/oidc-token-hash-5.0.3.tgz}
-    name: oidc-token-hash
-    version: 5.0.3
-    engines: {node: ^10.13.0 || >=12.0.0}
-    dev: false
-
   registry.npmjs.org/once/1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/once/-/once-1.4.0.tgz}
     name: once
@@ -2842,17 +2823,6 @@ packages:
     dependencies:
       wrappy: registry.npmjs.org/wrappy/1.0.2
     dev: true
-
-  registry.npmjs.org/openid-client/5.6.5:
-    resolution: {integrity: sha512-5P4qO9nGJzB5PI0LFlhj4Dzg3m4odt0qsJTfyEtZyOlkgpILwEioOhVVJOrS1iVH494S4Ee5OCjjg6Bf5WOj3w==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/openid-client/-/openid-client-5.6.5.tgz}
-    name: openid-client
-    version: 5.6.5
-    dependencies:
-      jose: registry.npmjs.org/jose/4.15.9
-      lru-cache: registry.npmjs.org/lru-cache/6.0.0
-      object-hash: registry.npmjs.org/object-hash/2.2.0
-      oidc-token-hash: registry.npmjs.org/oidc-token-hash/5.0.3
-    dev: false
 
   registry.npmjs.org/optionator/0.9.4:
     resolution: {integrity: sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/optionator/-/optionator-0.9.4.tgz}
@@ -3075,28 +3045,10 @@ packages:
       pretty-format: registry.npmjs.org/pretty-format/3.8.0
     dev: false
 
-  registry.npmjs.org/preact-render-to-string/5.2.6_preact@10.22.1:
-    resolution: {integrity: sha512-JyhErpYOvBV1hEPwIxc/fHWXPfnEGdRKxc8gFdAZ7XV4tlzyzG847XAyEZqoDnynP88akM4eaHcSOzNcLWFguw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/preact-render-to-string/-/preact-render-to-string-5.2.6.tgz}
-    id: registry.npmjs.org/preact-render-to-string/5.2.6
-    name: preact-render-to-string
-    version: 5.2.6
-    peerDependencies:
-      preact: '>=10'
-    dependencies:
-      preact: registry.npmjs.org/preact/10.22.1
-      pretty-format: registry.npmjs.org/pretty-format/3.8.0
-    dev: false
-
   registry.npmjs.org/preact/10.11.3:
     resolution: {integrity: sha512-eY93IVpod/zG3uMF22Unl8h9KkrcKIRs2EGar8hwLZZDU1lkjph303V9HZBwufh2s736U6VXuhD109LYqPoffg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/preact/-/preact-10.11.3.tgz}
     name: preact
     version: 10.11.3
-    dev: false
-
-  registry.npmjs.org/preact/10.22.1:
-    resolution: {integrity: sha512-jRYbDDgMpIb5LHq3hkI0bbl+l/TQ9UnkdQ0ww+lp+4MMOdqaUYdFc5qeyP+IV8FAd/2Em7drVPeKdQxsiWCf/A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/preact/-/preact-10.22.1.tgz}
-    name: preact
-    version: 10.22.1
     dev: false
 
   registry.npmjs.org/prelude-ls/1.2.1:
@@ -3799,13 +3751,6 @@ packages:
     name: util-deprecate
     version: 1.0.2
 
-  registry.npmjs.org/uuid/8.3.2:
-    resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/uuid/-/uuid-8.3.2.tgz}
-    name: uuid
-    version: 8.3.2
-    hasBin: true
-    dev: false
-
   registry.npmjs.org/which-boxed-primitive/1.0.2:
     resolution: {integrity: sha512-bwZdv0AKLpplFY2KZRX6TvyuN7ojjr7lwkg6ml0roIy9YeuSr7JS372qlNW18UQYzgYK9ziGcerWqZOmEn9VNg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/which-boxed-primitive/-/which-boxed-primitive-1.0.2.tgz}
     name: which-boxed-primitive
@@ -3904,12 +3849,6 @@ packages:
     name: wrappy
     version: 1.0.2
     dev: true
-
-  registry.npmjs.org/yallist/4.0.0:
-    resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/yallist/-/yallist-4.0.0.tgz}
-    name: yallist
-    version: 4.0.0
-    dev: false
 
   registry.npmjs.org/yaml/2.4.5:
     resolution: {integrity: sha512-aBx2bnqDzVOyNKfsysjA2ms5ZlnjSAW2eG3/L5G/CSujfjLJTJsEw1bGw8kCf04KodQWk1pxlGnZ56CRxiawmg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/yaml/-/yaml-2.4.5.tgz}
