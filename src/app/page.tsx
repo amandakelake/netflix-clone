@@ -1,15 +1,16 @@
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+import { auth } from '@/common/auth';
+import { redirect } from 'next/navigation';
+import UserAvatar from '@/components/UserAvatar';
+import HomePage from '@/components/pages/home';
 
-export default async function HomePage() {
+export default async function Page() {
+	const session = await auth()
+	if (!session) {
+		return redirect("/login");
+	}
 	return (
 		<main className="min-h-screen m-4">
-			<Link href={'/sign-up'}>
-				<Button>Sign Up</Button>
-			</Link>
-			<Link href={'/login'} className="m-1">
-				<Button>Login</Button>
-			</Link>
+			<HomePage />
 		</main>
 	);
 }
