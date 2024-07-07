@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { ReactNode } from "react";
-import UserAvatar from '@/components/UserAvatar';
 
 export default async function AuthLayout({ children }: { children: ReactNode }) {
   return (
